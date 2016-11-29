@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+springBoot {
+    mainClass = "siteminder.Application"
+}
+
+jar {
+    baseName = 'farm-graphql'
+    version = '0.0.1-SNAPSHOT'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "http://dl.bintray.com/oembedler/maven" }
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:2.4.5"
+    compile 'org.springframework.boot:spring-boot-starter-web:1.3.2.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa:1.4.2.RELEASE'
+    compile 'com.embedler.moon.graphql.boot.starter:graphql-spring-boot-starter:2.1.0-2016-04-29T09-27-45'
+    compile 'com.embedler.moon.graphql.boot.starter:graphiql-spring-boot-starter:2.1.0-2016-04-29T09-27-45'
+    compile 'mysql:mysql-connector-java:5.1.40'
+}
