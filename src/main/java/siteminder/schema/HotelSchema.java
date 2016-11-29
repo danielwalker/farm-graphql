@@ -29,7 +29,7 @@ public class HotelSchema {
         public List<HotelType> hotel(@GraphQLIn("name") String name, @GraphQLIn("page") Integer page) {
 
             // Maximum 20 hotels at a time.
-            PageRequest pageRequest = new PageRequest(0, 20);
+            PageRequest pageRequest = new PageRequest((page == null) ? 0 : page, 20);
 
             // Find a list of hotels.
             List<Hotel> hotels;
