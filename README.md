@@ -1,7 +1,7 @@
 GraphQL with GraphiQL on Spring Boot
 ====================================
 
-A demo of graphql in spring boot. Runs the graphiql user interface on root that allows you mess with queries.
+A demo of graphql in spring boot. Runs the graphiql user interface on root so you can play around.
 
 Example Queries
 ---------------
@@ -48,14 +48,15 @@ query {
 Gotchas
 -------
 
-graphql-spring-boot uses reflection and assumes all public attributes are exposed through graphql. This causes problems when using groovy objects.
+In graphql-spring-boot all public attributes are exposed through graphql. This causes problems when using groovy objects because it tries to expose metaClass and all the other GroovyObject fluff.
+Practically, this isn't a big problem. Schema "type" objects represent the data exposed in the graph.
 
 The graphiql starter appears to need the schema to contain at least one mutation.
 
 Running
 -------
 
-You'll need the following schema.
+You'll need the following schema (copied from the farm schema).
 
 ```
 DROP TABLE IF EXISTS `hotel`;
@@ -127,7 +128,7 @@ CREATE TABLE hotel_translation
 ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-Configure application.yml to point to a mysql database and run **gradlew bootrun**.
+Configure application.yml to point to your mysql database and run **gradlew bootrun**.
 
-The graphiql interface is available at http://localhost:8080/.
+The graphiql interface is available at **http://localhost:8080/**.
 
