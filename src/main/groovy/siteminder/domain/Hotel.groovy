@@ -12,7 +12,7 @@ import javax.persistence.Id
 class Hotel {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id
 
     String uuid

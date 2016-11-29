@@ -9,6 +9,6 @@ import siteminder.domain.HotelTranslation
 @CompileStatic
 interface HotelTranslationRepository extends CrudRepository<HotelTranslation, Long> {
 
-    @Query("SELECT t FROM HotelTranslation t WHERE t.hotel.uuid = :hotelUuid AND t.language = :language")
+    @Query("SELECT t FROM HotelTranslation t WHERE t.hotel.uuid = :hotelUuid AND (:language is null or t.language = :language)")
     List<HotelTranslation> findTranslations(@Param('hotelUuid') String hotelUuid, @Param('language') String language);
 }
