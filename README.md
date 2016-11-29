@@ -55,12 +55,7 @@ The graphiql starter appears to need the schema to contain at least one mutation
 Running
 -------
 
-Configure application.yml to point to a mysql database and run **gradlew bootrun**.
-
-When run, the graphiql interface is available at http://localhost:8080. An example query is:
-
-
-Run things locally using the following schema.
+You'll need the following schema.
 
 ```
 DROP TABLE IF EXISTS `hotel`;
@@ -132,5 +127,7 @@ CREATE TABLE hotel_translation
 ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
+Configure application.yml to point to a mysql database and run **gradlew bootrun**.
 
+The graphiql interface is available at http://localhost:8080/.
 
