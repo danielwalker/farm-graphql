@@ -12,7 +12,6 @@ class HotelTranslation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id
 
-    @JoinColumn(name = "hotel_id")
     @ManyToOne
     Hotel hotel
 
