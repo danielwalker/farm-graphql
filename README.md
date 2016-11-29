@@ -1,3 +1,8 @@
+GraphQL with GraphiQL on Spring Boot
+====================================
+
+A demo of graphql in spring boot. Runs the graphiql user interface on root that allows you mess with queries.
+
 Example Queries
 ---------------
 
@@ -54,20 +59,6 @@ Configure application.yml to point to a mysql database and run **gradlew bootrun
 
 When run, the graphiql interface is available at http://localhost:8080. An example query is:
 
-```
-query {
-    hotel(name: "tropi%") {
-        uuid
-        address
-	    name
-        tranlsations(language:"fr") {
-            language
-            name
-            description
-        }
-	}
-}
-```
 
 Run things locally using the following schema.
 
