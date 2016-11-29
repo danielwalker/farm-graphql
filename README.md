@@ -66,7 +66,7 @@ Gotchas
 -------
 
 In graphql-spring-boot all public attributes are exposed through graphql. This causes problems when using groovy objects because it tries to expose metaClass and all the other GroovyObject fluff.
-Practically, this isn't a big problem. Schema "type" objects represent the data exposed in the graph.
+This isn't a big problem. Schema "type" objects represent the data exposed in the graph.
 
 The graphiql starter appears to need the schema to contain at least one mutation.
 
