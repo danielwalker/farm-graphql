@@ -21,7 +21,7 @@ query {
         uuid
         address
 	    name
-        tranlsations {
+        translations {
             language
             name
             description
@@ -36,7 +36,7 @@ query {
         uuid
         address
 	    name
-        tranlsations(language:"fr") {
+        translations(language:"fr") {
             language
             name
             description

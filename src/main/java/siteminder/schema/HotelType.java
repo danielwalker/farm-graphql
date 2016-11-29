@@ -34,7 +34,7 @@ public class HotelType {
 
     String address;
 
-    @GraphQLField("tranlsations")
+    @GraphQLField("translations")
     public List<HotelTranslationType> getTranslations(@GraphQLIn HotelType hotel, @GraphQLIn("language") String language) {
         return hotelTranslationRepository
                 .findTranslations(hotel.uuid, language)
