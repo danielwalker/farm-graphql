@@ -73,7 +73,7 @@ The graphiql starter appears to need the schema to contain at least one mutation
 Running
 -------
 
-You'll need the following schema (copied from the farm schema).
+You'll need the following schema (copied from the farm schema). Alternatively, run `data.sql` to get some valid test data.
 
 ```
 DROP TABLE IF EXISTS `hotel`;
