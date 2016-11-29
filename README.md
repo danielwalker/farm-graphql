@@ -99,6 +99,47 @@ CREATE TABLE hotel_translation
 ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
+Example Queries
+---------------
+
+```
+query {
+    hotel {
+        uuid
+	    name
+	}
+}
+```
+
+```
+query {
+    hotel(name: "tropi%") {
+        uuid
+        address
+	    name
+        tranlsations {
+            language
+            name
+            description
+        }
+	}
+}
+```
+
+```
+query {
+    hotel(name: "tropi%") {
+        uuid
+        address
+	    name
+        tranlsations(language:"fr") {
+            language
+            name
+            description
+        }
+	}
+}
+```
 
 
 
