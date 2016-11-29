@@ -6,6 +6,8 @@ A demo of graphql in spring boot. Runs the graphiql user interface on root so yo
 Example Queries
 ---------------
 
+Find all hotels (20 per page)
+
 ```
 query {
     hotel {
@@ -14,6 +16,19 @@ query {
 	}
 }
 ```
+
+Find all hotels, specifying a page number.
+
+```
+query {
+    hotel(page: 2) {
+        uuid
+	    name
+	}
+}
+```
+
+Find hotels named `tropi%`, drill down to show all available translations.
 
 ```
 query {
@@ -29,6 +44,8 @@ query {
 	}
 }
 ```
+
+Show only the french translation.
 
 ```
 query {
@@ -130,5 +147,5 @@ ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 Configure application.yml to point to your mysql database and run **gradlew bootrun**.
 
-The graphiql interface is available at **http://localhost:8080/**.
+The graphiql interface is available at `http://localhost:8080/`.
 
