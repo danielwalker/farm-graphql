@@ -1,7 +1,6 @@
 package siteminder.schema;
 
 import com.oembedler.moon.graphql.engine.stereotype.*;
-import groovy.transform.CompileStatic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.util.StringUtils;

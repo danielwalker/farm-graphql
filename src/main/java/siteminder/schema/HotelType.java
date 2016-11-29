@@ -6,7 +6,6 @@ import com.oembedler.moon.graphql.engine.stereotype.GraphQLIn;
 import com.oembedler.moon.graphql.engine.stereotype.GraphQLObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import siteminder.domain.Hotel;
-import siteminder.repository.HotelRepository;
 import siteminder.repository.HotelTranslationRepository;
 
 import java.util.List;
@@ -19,10 +18,6 @@ public class HotelType {
     @Autowired
     @GraphQLIgnore
     HotelTranslationRepository hotelTranslationRepository;
-
-    @Autowired
-    @GraphQLIgnore
-    HotelRepository hotelRepository;
 
     @GraphQLIgnore
     static final Function<Hotel, HotelType> fromHotel = hotel -> {
